@@ -31,6 +31,7 @@ jobs:
       if: env.service_status == 'not_running'
       run: |
         ssh -o StrictHostKeyChecking=no tbany@s5.serv00.com << 'EOF'
+          /home/tbany/run.sh
           cd domains/ai.5201314.cloudns.ch
           screen -d -m -S node_server node index.js
         EOF
